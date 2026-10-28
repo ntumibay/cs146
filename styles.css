@@ -117,11 +117,6 @@ h1, h2, h3 {
   gap: 0.5rem;
 }
 
-.button.small {
-  padding: 0.4rem 0.9rem;
-  font-size: 0.9rem;
-}
-
 .button.secondary {
   color: #2b1d6b;
   background-color: #e4e1f5;
@@ -129,14 +124,6 @@ h1, h2, h3 {
 
 .button.secondary:hover {
   background-color: #d3cdf0;
-}
-
-/* Disabled state: "On Watchlist" / "Watched" */
-.button.done,
-.button.done:hover {
-  color: #ffffff;
-  background-color: #5c6178;
-  cursor: default;
 }
 
 /* ===== Cards ===== */
@@ -160,10 +147,6 @@ h1, h2, h3 {
 .card h3 {
   margin: 0.75rem 0 0.25rem;
   font-size: 1.15rem;
-}
-
-.card .button-row {
-  margin-top: 0.75rem;
 }
 
 .card-art {
@@ -190,6 +173,23 @@ h1, h2, h3 {
   font-size: 0.9rem;
   font-weight: normal;
   color: #5c6178;
+}
+
+/* Watch status label on catalog cards */
+.badge {
+  display: inline-block;
+  margin: 0.75rem 0 0;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #2b1d6b;
+  background-color: #ffd166;
+}
+
+.badge.watched {
+  color: #ffffff;
+  background-color: #2e7d5b;
 }
 
 /* Rank badge (#1, #2, #3) on the Top Anime list */
@@ -255,12 +255,6 @@ h1, h2, h3 {
   font-size: 1.05rem;
 }
 
-.row-actions {
-  display: flex;
-  gap: 0.5rem;
-  flex-shrink: 0;
-}
-
 .page-title {
   display: flex;
   justify-content: space-between;
@@ -273,67 +267,6 @@ h1, h2, h3 {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   align-items: start;
-}
-
-/* In the 3-column list layout the action buttons sit under the title */
-.list-columns .row {
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-/* ===== Forms ===== */
-.stack-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  max-width: 560px;
-  padding: 1.5rem;
-  margin-bottom: 2.5rem;
-  border-radius: 12px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.panel .stack-form {
-  padding: 0;
-  margin-bottom: 0;
-  box-shadow: none;
-}
-
-.stack-form label {
-  margin-top: 0.5rem;
-  font-weight: bold;
-}
-
-.stack-form input,
-.stack-form select,
-.stack-form textarea,
-.search-form input {
-  padding: 0.6rem;
-  border: 1px solid #c5c8d8;
-  border-radius: 6px;
-  font: inherit;
-  background-color: #ffffff;
-}
-
-.stack-form .button {
-  align-self: flex-start;
-  margin-top: 1rem;
-}
-
-.search-form {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-}
-
-.search-form label {
-  font-weight: bold;
-}
-
-.search-form input {
-  flex: 1;
 }
 
 /* ===== Table ===== */
@@ -572,11 +505,6 @@ h1, h2, h3 {
     grid-template-columns: 1fr;
   }
 
-  .list-columns .row {
-    flex-direction: row;
-    align-items: center;
-  }
-
   .hero h1 {
     font-size: 1.8rem;
   }
@@ -608,21 +536,6 @@ h1, h2, h3 {
 
   .hero h1 {
     font-size: 1.5rem;
-  }
-
-  .row,
-  .list-columns .row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .search-form {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .stack-form .button {
-    align-self: stretch;
   }
 
   .stat {
