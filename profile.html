@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AniRate - Profile</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">AniRate</a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rate.html">Browse &amp; Rate</a></li>
+        <li><a href="profile.html" aria-current="page">Profile</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>My Profile</h1>
+
+    <div class="profile-top">
+      <!-- User Story 4: profile picture with uploaded stickers around the border -->
+      <section class="profile-card" aria-label="Profile preview">
+        <img class="sticker sticker-tl" src="images/sticker-star.svg" alt="Star sticker" width="56" height="56">
+        <img class="sticker sticker-tr" src="images/sticker-heart.svg" alt="Heart sticker" width="56" height="56">
+        <img class="sticker sticker-br" src="images/sticker-cat.svg" alt="Cat sticker" width="56" height="56">
+
+        <img class="avatar" src="images/avatar.svg" alt="Profile picture of otaku_ian" width="120" height="120">
+        <h2>@otaku_ian</h2>
+        <p class="meta">Member since 2026</p>
+      </section>
+
+      <!-- User Story 3: total watched + breakdown by genre (matches the Watched list) -->
+      <section class="panel" aria-labelledby="metrics-heading">
+        <h2 id="metrics-heading">Watch Metrics</h2>
+        <div class="stat-row">
+          <div class="stat">
+            <p class="stat-value">5</p>
+            <p class="stat-label">Watched</p>
+          </div>
+          <div class="stat">
+            <p class="stat-value">4</p>
+            <p class="stat-label">Genres</p>
+          </div>
+          <div class="stat">
+            <p class="stat-value">Sci-Fi</p>
+            <p class="stat-label">Top genre</p>
+          </div>
+        </div>
+
+        <h3>Watched by Genre</h3>
+        <ul class="bar-chart">
+          <li>
+            <span class="bar-label">Sci-Fi</span>
+            <span class="bar"><span class="bar-fill w-40"></span></span>
+            <span class="bar-count">2 (40%)</span>
+          </li>
+          <li>
+            <span class="bar-label">Fantasy</span>
+            <span class="bar"><span class="bar-fill w-20"></span></span>
+            <span class="bar-count">1 (20%)</span>
+          </li>
+          <li>
+            <span class="bar-label">Action</span>
+            <span class="bar"><span class="bar-fill w-20"></span></span>
+            <span class="bar-count">1 (20%)</span>
+          </li>
+          <li>
+            <span class="bar-label">Comedy</span>
+            <span class="bar"><span class="bar-fill w-20"></span></span>
+            <span class="bar-count">1 (20%)</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <section aria-labelledby="lists-heading">
+      <div class="page-title">
+        <h2 id="lists-heading">My Lists</h2>
+        <a class="button" href="snapshot.html">Share</a>
+      </div>
+
+      <div class="list-columns">
+        <section class="panel" aria-labelledby="watching-heading">
+          <h3 id="watching-heading">Watching</h3>
+          <ul class="row-list">
+            <li class="row"><div class="row-info"><h4>Attack on Titan</h4><p class="meta">Action &middot; Episode 41 of 89</p></div></li>
+            <li class="row"><div class="row-info"><h4>Mob Psycho 100</h4><p class="meta">Action &middot; Episode 9 of 37</p></div></li>
+          </ul>
+        </section>
+
+        <section class="panel" aria-labelledby="watched-heading">
+          <h3 id="watched-heading">Watched</h3>
+          <ul class="row-list">
+            <li class="row"><div class="row-info"><h4>Frieren: Beyond Journey's End</h4><p class="meta">Fantasy &middot; Rated 10</p></div></li>
+            <li class="row"><div class="row-info"><h4>Fullmetal Alchemist: Brotherhood</h4><p class="meta">Action &middot; Rated 9</p></div></li>
+            <li class="row"><div class="row-info"><h4>Steins;Gate</h4><p class="meta">Sci-Fi &middot; Rated 8</p></div></li>
+            <li class="row"><div class="row-info"><h4>Cowboy Bebop</h4><p class="meta">Sci-Fi &middot; Rated 7</p></div></li>
+            <li class="row"><div class="row-info"><h4>Spy x Family</h4><p class="meta">Comedy &middot; Rated 6</p></div></li>
+          </ul>
+        </section>
+
+        <section class="panel" aria-labelledby="soon-heading">
+          <h3 id="soon-heading">Soon to Watch</h3>
+          <ul class="row-list">
+            <li class="row"><div class="row-info"><h4>Vinland Saga</h4><p class="meta">Action</p></div></li>
+            <li class="row"><div class="row-info"><h4>Haikyu!!</h4><p class="meta">Sports</p></div></li>
+            <li class="row"><div class="row-info"><h4>Violet Evergarden</h4><p class="meta">Drama</p></div></li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="customize-heading">
+      <h2 id="customize-heading">Customize Profile</h2>
+      <form class="stack-form" action="#" method="post" enctype="multipart/form-data">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" value="otaku_ian">
+
+        <label for="avatar">Change profile picture</label>
+        <input id="avatar" name="avatar" type="file" accept="image/*">
+
+        <label for="stickers">Upload stickers (images)</label>
+        <input id="stickers" name="stickers" type="file" accept="image/*" multiple>
+
+        <button class="button" type="submit">Save Profile</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 AniRate &middot; CS146 Group Project</p>
+  </footer>
+</body>
+</html>

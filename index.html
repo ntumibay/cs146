@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AniRate - Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">AniRate</a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="rate.html">Browse &amp; Rate</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Track, rate, and share the anime you watch</h1>
+      <p>Your favorites and your watchlist, all in one place.</p>
+      <div class="button-row">
+        <a class="button" href="rate.html">Find Anime to Watch</a>
+        <!-- User Story 5: Share takes a snapshot of your lists -->
+        <a class="button secondary" href="snapshot.html">Share My Lists</a>
+      </div>
+    </section>
+
+    <!-- User Story 1: top 3 rated anime, highest to lowest -->
+    <section aria-labelledby="top-anime-heading">
+      <h2 id="top-anime-heading">Top Anime</h2>
+      <ol class="card-grid ranked">
+        <li class="card">
+          <div class="card-art art-1" aria-hidden="true"></div>
+          <h3>Frieren: Beyond Journey's End</h3>
+          <p class="meta">Genre: Fantasy</p>
+          <p class="score">10 <span>/ 10</span></p>
+        </li>
+        <li class="card">
+          <div class="card-art art-2" aria-hidden="true"></div>
+          <h3>Fullmetal Alchemist: Brotherhood</h3>
+          <p class="meta">Genre: Action</p>
+          <p class="score">9 <span>/ 10</span></p>
+        </li>
+        <li class="card">
+          <div class="card-art art-3" aria-hidden="true"></div>
+          <h3>Steins;Gate</h3>
+          <p class="meta">Genre: Sci-Fi</p>
+          <p class="score">8 <span>/ 10</span></p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- User Story 2: watchlist shown on the front page -->
+    <section aria-labelledby="soon-heading">
+      <h2 id="soon-heading">Soon to Watch</h2>
+      <ul class="row-list">
+        <li class="row">
+          <div class="row-info">
+            <h3>Vinland Saga</h3>
+            <p class="meta">Genre: Action</p>
+          </div>
+          <div class="row-actions">
+            <button class="button small" type="button">Mark Watched</button>
+            <button class="button small secondary" type="button">Remove</button>
+          </div>
+        </li>
+        <li class="row">
+          <div class="row-info">
+            <h3>Haikyu!!</h3>
+            <p class="meta">Genre: Sports</p>
+          </div>
+          <div class="row-actions">
+            <button class="button small" type="button">Mark Watched</button>
+            <button class="button small secondary" type="button">Remove</button>
+          </div>
+        </li>
+        <li class="row">
+          <div class="row-info">
+            <h3>Violet Evergarden</h3>
+            <p class="meta">Genre: Drama</p>
+          </div>
+          <div class="row-actions">
+            <button class="button small" type="button">Mark Watched</button>
+            <button class="button small secondary" type="button">Remove</button>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 AniRate &middot; CS146 Group Project</p>
+  </footer>
+</body>
+</html>

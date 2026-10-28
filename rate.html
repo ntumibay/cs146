@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AniRate - Browse &amp; Rate</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">AniRate</a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rate.html" aria-current="page">Browse &amp; Rate</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Browse &amp; Rate</h1>
+
+    <form class="search-form" action="#" method="get" role="search">
+      <label for="search">Search anime</label>
+      <input id="search" name="q" type="search" placeholder="e.g. Cowboy Bebop">
+      <button class="button" type="submit">Search</button>
+    </form>
+
+    <!-- User Story 2: "Add to Watchlist" becomes "On Watchlist" once added -->
+    <section aria-labelledby="catalog-heading">
+      <h2 id="catalog-heading">Anime Catalog</h2>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-art art-1" aria-hidden="true"></div>
+          <h3>Frieren: Beyond Journey's End</h3>
+          <p class="meta">Fantasy &middot; 2023 &middot; 28 episodes</p>
+          <div class="button-row">
+            <button class="button small done" type="button" disabled>Watched</button>
+            <a class="button small secondary" href="#rate-heading">Rate</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-art art-2" aria-hidden="true"></div>
+          <h3>Fullmetal Alchemist: Brotherhood</h3>
+          <p class="meta">Action &middot; 2009 &middot; 64 episodes</p>
+          <div class="button-row">
+            <button class="button small done" type="button" disabled>Watched</button>
+            <a class="button small secondary" href="#rate-heading">Rate</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-art art-3" aria-hidden="true"></div>
+          <h3>Steins;Gate</h3>
+          <p class="meta">Sci-Fi &middot; 2011 &middot; 24 episodes</p>
+          <div class="button-row">
+            <button class="button small done" type="button" disabled>Watched</button>
+            <a class="button small secondary" href="#rate-heading">Rate</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-art art-4" aria-hidden="true"></div>
+          <h3>Vinland Saga</h3>
+          <p class="meta">Action &middot; 2019 &middot; 48 episodes</p>
+          <div class="button-row">
+            <button class="button small done" type="button" disabled>On Watchlist</button>
+            <a class="button small secondary" href="#rate-heading">Rate</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-art art-5" aria-hidden="true"></div>
+          <h3>Haikyu!!</h3>
+          <p class="meta">Sports &middot; 2014 &middot; 85 episodes</p>
+          <div class="button-row">
+            <button class="button small done" type="button" disabled>On Watchlist</button>
+            <a class="button small secondary" href="#rate-heading">Rate</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-art art-6" aria-hidden="true"></div>
+          <h3>Demon Slayer</h3>
+          <p class="meta">Action &middot; 2019 &middot; 63 episodes</p>
+          <div class="button-row">
+            <button class="button small" type="button">Add to Watchlist</button>
+            <a class="button small secondary" href="#rate-heading">Rate</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="rate-heading">
+      <h2 id="rate-heading">Rate an Anime</h2>
+      <p>Your ratings decide which titles show up in Top Anime on the home page.</p>
+      <form class="stack-form" action="#" method="get">
+        <label for="title">Anime title</label>
+        <select id="title" name="title" required>
+          <option value="">Choose an anime</option>
+          <option>Frieren: Beyond Journey's End</option>
+          <option>Fullmetal Alchemist: Brotherhood</option>
+          <option>Steins;Gate</option>
+          <option>Cowboy Bebop</option>
+          <option>Spy x Family</option>
+          <option>Vinland Saga</option>
+          <option>Haikyu!!</option>
+          <option>Demon Slayer</option>
+        </select>
+
+        <label for="score">Your score (1&ndash;10)</label>
+        <input id="score" name="score" type="number" min="1" max="10" required>
+
+        <label for="review">Short review</label>
+        <textarea id="review" name="review" rows="4" placeholder="What did you like or dislike?"></textarea>
+
+        <button class="button" type="submit">Submit Rating</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="my-ratings-heading">
+      <h2 id="my-ratings-heading">My Ratings</h2>
+      <table class="data-table">
+        <caption>All of your rated anime, highest score first</caption>
+        <thead>
+          <tr><th scope="col">Rank</th><th scope="col">Title</th><th scope="col">Genre</th><th scope="col">Rating</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Frieren: Beyond Journey's End</td><td>Fantasy</td><td>10</td></tr>
+          <tr><td>2</td><td>Fullmetal Alchemist: Brotherhood</td><td>Action</td><td>9</td></tr>
+          <tr><td>3</td><td>Steins;Gate</td><td>Sci-Fi</td><td>8</td></tr>
+          <tr><td>4</td><td>Cowboy Bebop</td><td>Sci-Fi</td><td>7</td></tr>
+          <tr><td>5</td><td>Spy x Family</td><td>Comedy</td><td>6</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 AniRate &middot; CS146 Group Project</p>
+  </footer>
+</body>
+</html>

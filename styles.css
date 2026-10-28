@@ -1,0 +1,657 @@
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: #1f2333;
+  background-color: #f4f5fb;
+}
+
+a {
+  color: #5a3fd1;
+}
+
+img {
+  max-width: 100%;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+main > section {
+  margin-bottom: 2.5rem;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+.center {
+  text-align: center;
+}
+
+.meta {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #5c6178;
+}
+
+/* ===== Header / Nav ===== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background-color: #2b1d6b;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #dcd6ff;
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ===== Hero ===== */
+.hero {
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #5a3fd1, #d1477a);
+}
+
+.hero h1 {
+  margin-top: 0;
+  font-size: 2.2rem;
+}
+
+/* ===== Buttons ===== */
+.button {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: bold;
+  color: #2b1d6b;
+  background-color: #ffd166;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #ffc23d;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.button.small {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+.button.secondary {
+  color: #2b1d6b;
+  background-color: #e4e1f5;
+}
+
+.button.secondary:hover {
+  background-color: #d3cdf0;
+}
+
+/* Disabled state: "On Watchlist" / "Watched" */
+.button.done,
+.button.done:hover {
+  color: #ffffff;
+  background-color: #5c6178;
+  cursor: default;
+}
+
+/* ===== Cards ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card h2,
+.card h3 {
+  margin: 0.75rem 0 0.25rem;
+  font-size: 1.15rem;
+}
+
+.card .button-row {
+  margin-top: 0.75rem;
+}
+
+.card-art {
+  height: 160px;
+  border-radius: 8px;
+}
+
+/* Placeholder cover colors until real cover images are added */
+.art-1 { background: linear-gradient(135deg, #7ec8e3, #3a6ea5); }
+.art-2 { background: linear-gradient(135deg, #f6a04d, #b23a48); }
+.art-3 { background: linear-gradient(135deg, #8bd17c, #2e7d5b); }
+.art-4 { background: linear-gradient(135deg, #a3a3a3, #4a4a4a); }
+.art-5 { background: linear-gradient(135deg, #ffd166, #ef476f); }
+.art-6 { background: linear-gradient(135deg, #f4a6c6, #8e5bd1); }
+
+.score {
+  margin: 0.5rem 0 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #5a3fd1;
+}
+
+.score span {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #5c6178;
+}
+
+/* Rank badge (#1, #2, #3) on the Top Anime list */
+.ranked {
+  counter-reset: rank;
+}
+
+.ranked .card {
+  position: relative;
+  counter-increment: rank;
+}
+
+.ranked .card::before {
+  content: "#" counter(rank);
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #2b1d6b;
+}
+
+/* ===== Panels and row lists ===== */
+.panel {
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.panel h2 {
+  margin-top: 0;
+}
+
+.row-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.panel .row {
+  background-color: #f4f5fb;
+  box-shadow: none;
+}
+
+.row h3,
+.row h4 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.row-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.page-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.list-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* In the 3-column list layout the action buttons sit under the title */
+.list-columns .row {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ===== Forms ===== */
+.stack-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 560px;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.panel .stack-form {
+  padding: 0;
+  margin-bottom: 0;
+  box-shadow: none;
+}
+
+.stack-form label {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.stack-form input,
+.stack-form select,
+.stack-form textarea,
+.search-form input {
+  padding: 0.6rem;
+  border: 1px solid #c5c8d8;
+  border-radius: 6px;
+  font: inherit;
+  background-color: #ffffff;
+}
+
+.stack-form .button {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-form label {
+  font-weight: bold;
+}
+
+.search-form input {
+  flex: 1;
+}
+
+/* ===== Table ===== */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+.data-table caption {
+  padding-bottom: 0.5rem;
+  text-align: left;
+  color: #5c6178;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid #e4e1f5;
+  text-align: left;
+}
+
+.data-table th {
+  color: #ffffff;
+  background-color: #2b1d6b;
+}
+
+/* ===== Metrics ===== */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.stat {
+  padding: 1.25rem;
+  border-radius: 12px;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.stat p {
+  margin: 0;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #5a3fd1;
+}
+
+.stat-label {
+  color: #5c6178;
+}
+
+.bar-chart {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bar-chart li {
+  display: grid;
+  grid-template-columns: 6rem 1fr 5rem;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.bar {
+  display: block;
+  height: 1.25rem;
+  border-radius: 6px;
+  background-color: #e4e1f5;
+}
+
+.bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: 6px;
+  background-color: #5a3fd1;
+}
+
+/* Bar widths are percentages of total anime watched */
+.w-20 { width: 20%; }
+.w-40 { width: 40%; }
+.w-60 { width: 60%; }
+.w-80 { width: 80%; }
+.w-100 { width: 100%; }
+
+.bar-count {
+  text-align: right;
+  color: #5c6178;
+}
+
+.empty-state {
+  padding: 2rem 1rem;
+  border: 2px dashed #c5c8d8;
+  border-radius: 8px;
+  text-align: center;
+  color: #5c6178;
+}
+
+.empty-state p {
+  margin: 0 0 0.5rem;
+}
+
+/* ===== Profile ===== */
+.profile-top {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin-bottom: 2.5rem;
+}
+
+.panel .stat-row {
+  gap: 1rem;
+}
+
+.panel .stat {
+  background-color: #f4f5fb;
+  box-shadow: none;
+}
+
+.profile-card {
+  position: relative;
+  max-width: 420px;
+  width: 100%;
+  margin: 1.5rem auto 0;
+  padding: 2.5rem 1.5rem;
+  border: 4px solid #5a3fd1;
+  border-radius: 16px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.profile-card h2 {
+  margin: 0.75rem 0 0.25rem;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 4px solid #e4e1f5;
+}
+
+/* Stickers sit on top of the profile border */
+.sticker {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+}
+
+.sticker-tl { top: -28px; left: -28px; }
+.sticker-tr { top: -28px; right: -28px; }
+.sticker-br { bottom: -28px; right: -28px; }
+
+/* ===== Snapshot ===== */
+.snapshot {
+  max-width: 760px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 16px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2b1d6b, #5a3fd1);
+}
+
+.snapshot-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.snapshot-header img {
+  border-radius: 50%;
+}
+
+.snapshot-header h2 {
+  margin: 0;
+}
+
+.snapshot-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.snapshot-columns section {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.snapshot-columns h3 {
+  margin: 0 0 0.5rem;
+  color: #ffd166;
+}
+
+.snapshot-columns ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.snapshot-footer {
+  margin: 1rem 0 0;
+  font-size: 0.85rem;
+  color: #dcd6ff;
+}
+
+/* ===== About ===== */
+.team-list {
+  padding-left: 1.25rem;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  padding: 1.5rem;
+  text-align: center;
+  color: #dcd6ff;
+  background-color: #2b1d6b;
+}
+
+/* ===== Tablet (≤ 900px) ===== */
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .profile-top {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .list-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .list-columns .row {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* ===== Phone (≤ 600px) ===== */
+@media (max-width: 600px) {
+  main {
+    padding: 1.5rem 1rem;
+  }
+
+  .site-header {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 0.5rem 1rem;
+  }
+
+  .card-grid,
+  .snapshot-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .row,
+  .list-columns .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .stack-form .button {
+    align-self: stretch;
+  }
+
+  .stat {
+    padding: 0.75rem 0.25rem;
+  }
+
+  .stat-value {
+    font-size: 1.15rem;
+    white-space: nowrap;
+  }
+
+  .bar-chart li {
+    grid-template-columns: 4.5rem 1fr 4rem;
+    gap: 0.5rem;
+  }
+
+  /* Pull stickers inside the card so they don't cause horizontal scroll */
+  .sticker {
+    width: 44px;
+    height: 44px;
+  }
+
+  .sticker-tl { top: -16px; left: -6px; }
+  .sticker-tr { top: -16px; right: -6px; }
+  .sticker-br { bottom: -16px; right: -6px; }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.5rem 0.4rem;
+    font-size: 0.9rem;
+  }
+}
