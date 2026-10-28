@@ -1,4 +1,4 @@
-# AniRate – Anime Rater and Watchlist
+# CrunchyRate – Anime Rater and Watchlist
 
 CS146 group project by Ian Zambrano, Jayden Tumbokon, Jessie Ibea, and Noah Tumibay.
 

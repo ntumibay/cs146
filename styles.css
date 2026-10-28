@@ -1,3 +1,15 @@
+/* ===== Colors ===== */
+:root {
+  --orange-dark: #c2410c;   /* header, footer, table headings */
+  --orange: #f97316;        /* hero, bars, profile border */
+  --orange-light: #ffedd5;  /* page background */
+  --orange-pale: #fff7ed;   /* list rows, stat boxes */
+  --border: #fed7aa;
+  --text: #1c1917;
+  --text-muted: #6b4f3a;
+  --white: #ffffff;
+}
+
 /* ===== Base ===== */
 * {
   box-sizing: border-box;
@@ -7,12 +19,12 @@ body {
   margin: 0;
   font-family: "Segoe UI", Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  color: #1f2333;
-  background-color: #f4f5fb;
+  color: var(--text);
+  background-color: var(--orange-light);
 }
 
 a {
-  color: #5a3fd1;
+  color: var(--orange-dark);
 }
 
 img {
@@ -29,34 +41,30 @@ main > section {
   margin-bottom: 2.5rem;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   line-height: 1.2;
-}
-
-.center {
-  text-align: center;
 }
 
 .meta {
   margin: 0;
   font-size: 0.9rem;
-  color: #5c6178;
+  color: var(--text-muted);
 }
 
-/* ===== Header / Nav ===== */
+/* ===== Header / Footer ===== */
 .site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
   padding: 1rem 1.5rem;
-  background-color: #2b1d6b;
+  background-color: var(--orange-dark);
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--white);
   text-decoration: none;
 }
 
@@ -70,22 +78,28 @@ h1, h2, h3 {
 }
 
 .nav-links a {
-  color: #dcd6ff;
+  color: var(--white);
   text-decoration: none;
 }
 
 .nav-links a:hover,
 .nav-links a[aria-current="page"] {
-  color: #ffffff;
   text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.site-footer {
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--white);
+  background-color: var(--orange-dark);
 }
 
 /* ===== Hero ===== */
 .hero {
   padding: 2.5rem 2rem;
   border-radius: 12px;
-  color: #ffffff;
-  background: linear-gradient(135deg, #5a3fd1, #d1477a);
+  background-color: var(--orange);
 }
 
 .hero h1 {
@@ -94,36 +108,35 @@ h1, h2, h3 {
 }
 
 /* ===== Buttons ===== */
-.button {
-  display: inline-block;
-  padding: 0.7rem 1.4rem;
-  border: none;
-  border-radius: 8px;
-  font: inherit;
-  font-weight: bold;
-  color: #2b1d6b;
-  background-color: #ffd166;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: #ffc23d;
-}
-
 .button-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
+.button {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border: 2px solid var(--text);
+  border-radius: 8px;
+  font-weight: bold;
+  color: var(--white);
+  background-color: var(--text);
+  text-decoration: none;
+}
+
+.button:hover {
+  color: var(--text);
+  background-color: var(--white);
+}
+
 .button.secondary {
-  color: #2b1d6b;
-  background-color: #e4e1f5;
+  color: var(--text);
+  background-color: var(--white);
 }
 
 .button.secondary:hover {
-  background-color: #d3cdf0;
+  background-color: var(--orange-pale);
 }
 
 /* ===== Cards ===== */
@@ -136,11 +149,16 @@ h1, h2, h3 {
   list-style: none;
 }
 
+.card,
+.panel,
+.stat {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background-color: var(--white);
+}
+
 .card {
   padding: 1rem;
-  border-radius: 12px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .card h2,
@@ -155,24 +173,24 @@ h1, h2, h3 {
 }
 
 /* Placeholder cover colors until real cover images are added */
-.art-1 { background: linear-gradient(135deg, #7ec8e3, #3a6ea5); }
-.art-2 { background: linear-gradient(135deg, #f6a04d, #b23a48); }
-.art-3 { background: linear-gradient(135deg, #8bd17c, #2e7d5b); }
-.art-4 { background: linear-gradient(135deg, #a3a3a3, #4a4a4a); }
-.art-5 { background: linear-gradient(135deg, #ffd166, #ef476f); }
-.art-6 { background: linear-gradient(135deg, #f4a6c6, #8e5bd1); }
+.art-1 { background-color: #fdba74; }
+.art-2 { background-color: #fb923c; }
+.art-3 { background-color: #f97316; }
+.art-4 { background-color: #ea580c; }
+.art-5 { background-color: #fed7aa; }
+.art-6 { background-color: #9a3412; }
 
 .score {
   margin: 0.5rem 0 0;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #5a3fd1;
+  color: var(--orange-dark);
 }
 
 .score span {
   font-size: 0.9rem;
   font-weight: normal;
-  color: #5c6178;
+  color: var(--text-muted);
 }
 
 /* Watch status label on catalog cards */
@@ -183,13 +201,13 @@ h1, h2, h3 {
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: bold;
-  color: #2b1d6b;
-  background-color: #ffd166;
+  color: #9a3412;
+  background-color: var(--orange-light);
 }
 
 .badge.watched {
-  color: #ffffff;
-  background-color: #2e7d5b;
+  color: var(--white);
+  background-color: var(--orange-dark);
 }
 
 /* Rank badge (#1, #2, #3) on the Top Anime list */
@@ -210,19 +228,16 @@ h1, h2, h3 {
   padding: 0.2rem 0.6rem;
   border-radius: 6px;
   font-weight: bold;
-  color: #ffffff;
-  background-color: #2b1d6b;
+  color: var(--white);
+  background-color: var(--text);
 }
 
 /* ===== Panels and row lists ===== */
 .panel {
   padding: 1.25rem 1.5rem;
-  border-radius: 12px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.panel h2 {
+.panel > :first-child {
   margin-top: 0;
 }
 
@@ -233,20 +248,16 @@ h1, h2, h3 {
 }
 
 .row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
   padding: 0.75rem 1rem;
   margin-bottom: 0.75rem;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background-color: #ffffff;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  background-color: var(--white);
 }
 
 .panel .row {
-  background-color: #f4f5fb;
-  box-shadow: none;
+  border: none;
+  background-color: var(--orange-pale);
 }
 
 .row h3,
@@ -273,40 +284,42 @@ h1, h2, h3 {
 .data-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .data-table caption {
   padding-bottom: 0.5rem;
   text-align: left;
-  color: #5c6178;
+  color: var(--text-muted);
 }
 
 .data-table th,
 .data-table td {
   padding: 0.6rem 0.75rem;
-  border-bottom: 1px solid #e4e1f5;
+  border-bottom: 1px solid var(--border);
   text-align: left;
 }
 
 .data-table th {
-  color: #ffffff;
-  background-color: #2b1d6b;
+  color: var(--white);
+  background-color: var(--orange-dark);
 }
 
 /* ===== Metrics ===== */
 .stat-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
+}
+
+.panel .stat {
+  border: none;
+  background-color: var(--orange-pale);
 }
 
 .stat {
   padding: 1.25rem;
-  border-radius: 12px;
   text-align: center;
-  background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .stat p {
@@ -316,11 +329,11 @@ h1, h2, h3 {
 .stat-value {
   font-size: 2rem;
   font-weight: bold;
-  color: #5a3fd1;
+  color: var(--orange-dark);
 }
 
 .stat-label {
-  color: #5c6178;
+  color: var(--text-muted);
 }
 
 .bar-chart {
@@ -341,14 +354,14 @@ h1, h2, h3 {
   display: block;
   height: 1.25rem;
   border-radius: 6px;
-  background-color: #e4e1f5;
+  background-color: var(--orange-light);
 }
 
 .bar-fill {
   display: block;
   height: 100%;
   border-radius: 6px;
-  background-color: #5a3fd1;
+  background-color: var(--orange);
 }
 
 /* Bar widths are percentages of total anime watched */
@@ -360,19 +373,7 @@ h1, h2, h3 {
 
 .bar-count {
   text-align: right;
-  color: #5c6178;
-}
-
-.empty-state {
-  padding: 2rem 1rem;
-  border: 2px dashed #c5c8d8;
-  border-radius: 8px;
-  text-align: center;
-  color: #5c6178;
-}
-
-.empty-state p {
-  margin: 0 0 0.5rem;
+  color: var(--text-muted);
 }
 
 /* ===== Profile ===== */
@@ -384,25 +385,16 @@ h1, h2, h3 {
   margin-bottom: 2.5rem;
 }
 
-.panel .stat-row {
-  gap: 1rem;
-}
-
-.panel .stat {
-  background-color: #f4f5fb;
-  box-shadow: none;
-}
-
 .profile-card {
   position: relative;
   max-width: 420px;
   width: 100%;
   margin: 1.5rem auto 0;
   padding: 2.5rem 1.5rem;
-  border: 4px solid #5a3fd1;
+  border: 4px solid var(--orange);
   border-radius: 16px;
   text-align: center;
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .profile-card h2 {
@@ -411,7 +403,7 @@ h1, h2, h3 {
 
 .avatar {
   border-radius: 50%;
-  border: 4px solid #e4e1f5;
+  border: 4px solid var(--border);
 }
 
 /* Stickers sit on top of the profile border */
@@ -431,8 +423,8 @@ h1, h2, h3 {
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   border-radius: 16px;
-  color: #ffffff;
-  background: linear-gradient(135deg, #2b1d6b, #5a3fd1);
+  color: var(--white);
+  background-color: var(--orange-dark);
 }
 
 .snapshot-header {
@@ -459,12 +451,13 @@ h1, h2, h3 {
 .snapshot-columns section {
   padding: 0.75rem 1rem;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--text);
+  background-color: var(--orange-pale);
 }
 
 .snapshot-columns h3 {
   margin: 0 0 0.5rem;
-  color: #ffd166;
+  color: var(--orange-dark);
 }
 
 .snapshot-columns ul {
@@ -475,20 +468,11 @@ h1, h2, h3 {
 .snapshot-footer {
   margin: 1rem 0 0;
   font-size: 0.85rem;
-  color: #dcd6ff;
 }
 
 /* ===== About ===== */
 .team-list {
   padding-left: 1.25rem;
-}
-
-/* ===== Footer ===== */
-.site-footer {
-  padding: 1.5rem;
-  text-align: center;
-  color: #dcd6ff;
-  background-color: #2b1d6b;
 }
 
 /* ===== Tablet (≤ 900px) ===== */
@@ -497,12 +481,12 @@ h1, h2, h3 {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .profile-top {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
   .list-columns {
     grid-template-columns: 1fr;
+  }
+
+  .profile-top {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .hero h1 {
@@ -552,7 +536,7 @@ h1, h2, h3 {
     gap: 0.5rem;
   }
 
-  /* Pull stickers inside the card so they don't cause horizontal scroll */
+  /* Smaller stickers pulled inside the card so they don't cause horizontal scroll */
   .sticker {
     width: 44px;
     height: 44px;
